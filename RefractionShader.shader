@@ -16,7 +16,7 @@ void fragment()
 	offset.x += NORMAL.z * xNorm * strength * 0.01;
 	offset.y += NORMAL.z * yNorm * strength * -0.01;
 
-	ALBEDO = (texture(SCREEN_TEXTURE, offset).xyz + (tint.xyz * tint.a)) / 2.0;
+	ALBEDO = ((texture(SCREEN_TEXTURE, offset).xyz * (1.0 - tint.a)) + (tint.xyz * tint.a)) / 2.0;
 	SPECULAR = specular;
 	ROUGHNESS = roughness;
 	METALLIC = metallic;
